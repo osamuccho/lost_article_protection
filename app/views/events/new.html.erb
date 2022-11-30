@@ -1,0 +1,9 @@
+<div class="contents row">
+  <div class="container">
+    <h3>追加する</h3>
+    <%= form_with(model: @event, local: true) do |form| %>
+      <%= form.text_field :event_name, placeholder: "Event" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
