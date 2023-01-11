@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
 
+
+  before_action :move_to_index, except: [:index]
+
   def index
     @events = Event.all
   end
@@ -16,10 +19,18 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     event.destroy
   end
+  
 
   private
   def event_params
-    params.require(:event).permit(:event_name)
+    params.require(:event).permit(:event_name).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
   
 end
+  

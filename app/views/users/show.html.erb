@@ -1,0 +1,7 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @events.each do |event| %>
+      <p><%= event.tag_name %></p>
+      <span class="name"><%= event.event_name %></span>
+  <% end %>
+</div>
