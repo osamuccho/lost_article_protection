@@ -1,0 +1,15 @@
+<div class="user_nav grid-12">
+ <a class="post" href="/tags/new">＋</a>
+</div>
+
+<div class="contents tag">
+  <% @tags.each do |tag| %>
+      <span class="tag name">
+      <a href="/tags/<%= event.tags %>">
+        <%= tag.tag_name %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+
