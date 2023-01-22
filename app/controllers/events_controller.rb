@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_action :move_to_index, except: [:index]
 
   def index
-    @events = Event.all
+    @events = Event.includes(:user)
   end
 
   def new
@@ -12,7 +12,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    Event.create(event_params)
+    if Event.create(event_params)
+      redirect_to events_path
+      else
+        render :new
+    end
   end
 
   def destroy
