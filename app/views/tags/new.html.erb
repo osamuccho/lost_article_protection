@@ -1,9 +1,14 @@
 <div class="new tag">
   <div class="plus">
     <h3>追加する</h3>
-    <%= form_with(model: @tag, local: true) do |form| %>
+    <%= form_with model: @tag, local: true do |form| %>
       <%= form.text_field :tag_name, placeholder: "Tag" %>
       <%= form.submit "SEND" %>
     <% end %>
   </div>
 </div>
+
+
+
+
+

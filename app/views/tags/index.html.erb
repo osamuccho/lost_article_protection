@@ -5,11 +5,13 @@
 <div class="contents tag">
   <% @tags.each do |tag| %>
       <span class="tag name">
-      <a href="/tags/<%= event.tags %>">
         <%= tag.tag_name %>
       </span>
+      <ul class="more_lists">
+          <li>
+            <%= link_to '削除', "/tags/#{tag.id}", method: :delete %>
+          </li>
+        </ul>
     </div>
   <% end %>
 </div>
-
-
