@@ -3,6 +3,10 @@
     <h3>追加する</h3>
     <%= form_with(model: @event, local: true) do |form| %>
       <%= form.text_field :event_name, placeholder: "Event" %>
+      <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= form.file_field :image, class: 'hidden' %>
+    </label>
       <%= form.submit "SEND" %>
     <% end %>
   </div>

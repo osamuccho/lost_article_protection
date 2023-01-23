@@ -6,12 +6,13 @@
   <% @events.each do |event| %>
   <div class="content_post" style="background-image: url(<%= event.event_name %>);">
      <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
+        <span><%= image_tag event.image.variant(resize: '150x150'), class: :card__img if event.image.attached? %></span>
         
         
       <span class="name">
         <a href="/tags/<%= event.tags %>">
         <%= event.event_name %>
+        
          
       </span>
 
