@@ -5,4 +5,9 @@ class Event < ApplicationRecord
   has_many :tags
   has_one_attached :image
 
+  validates :event_name, presence: true
+
+  
+
+
 end
